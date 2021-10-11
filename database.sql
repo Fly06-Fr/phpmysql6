@@ -38,7 +38,10 @@ CREATE TABLE `author` (
 
 LOCK TABLES `author` WRITE;
 /*!40000 ALTER TABLE `author` DISABLE KEYS */;
-INSERT INTO `author` VALUES (1,'Kevin Yank','thatguy@kevinyank.com',''),(2,'Tom Butler','tom@r.je','');
+INSERT INTO `author` (`id`,`name`,`email`,`password`,`permissions`) 
+VALUES 
+(1,'Kevin Yank','thatguy@kevinyank.com','$2y$10$6fc6QvAkatgF0gDh7tWQT.O.2g7yeWpuEKYUlOeQAR0KzQOkItIU2',31),
+(2,'Tom Butler','tom@r.je','$2y$10$Y0YiKEOb/2eeoMiZfUnYD.aqbluwfOHF7PxOVlHP0hlBuKm1AGlSO',63);
 /*!40000 ALTER TABLE `author` ENABLE KEYS */;
 UNLOCK TABLES;
 

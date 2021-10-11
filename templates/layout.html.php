@@ -19,6 +19,9 @@
 			<?php else: ?>
 			<li><a href="/login">Log in</a></li>
 			<?php endif; ?>
+			<?php if ($user && $user->hasPermission(Ijdb\Entity\Author::EDIT_USER_ACCESS)): ?>
+			<li><a href="/author/list">Users list</a></li>
+			<?php endif; ?>	                        
 		</ul>
 	</nav>
 
