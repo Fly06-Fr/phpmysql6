@@ -47,13 +47,8 @@ class EntryPoint {
 			$page = $controller->$action();
 
 			$title = $page['title'];
-
-			if (isset($page['variables'])) {
-				$output = $this->loadTemplate($page['template'], $page['variables']);
-			}
-			else {
-				$output = $this->loadTemplate($page['template']);
-			}
+			
+			$output = $this->loadTemplate($page['template'], (isset($page['variables']) ? $page['variables'] : []));
 
 			echo $this->loadTemplate('layout.html.php', ['loggedIn' => $authentication->isLoggedIn(),
                                                                      'user' => $authentication->getUser(),
