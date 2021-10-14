@@ -14,6 +14,9 @@
 			<li><a href="/">Home</a></li>
 			<li><a href="/joke/list">Jokes List</a></li>
 			<li><a href="/joke/edit">Add a new Joke</a></li>
+                        <?php if ($user && $user->hasPermission(Ijdb\Entity\Author::EDIT_CATEGORIES)): ?>
+			<li><a href="/category/list">Categories list</a></li>
+			<?php endif; ?>	
 			<?php if ($loggedIn): ?>
 			<li><a href="/logout">Log out</a></li>
 			<?php else: ?>
